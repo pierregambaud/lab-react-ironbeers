@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import BeerCard from './BeerCard.js';
+import BeerListItem from './BeerListItem.js';
 
 class BeersList extends Component {
     state = {
@@ -29,7 +29,14 @@ class BeersList extends Component {
                 <ul>
                     {this.state.beers.map(beer => {
                         return (
-                            <BeerCard key={beer._id} id={beer._id} image={beer.image_url} name={beer.name} tagline={beer.tagline} contributed={beer.contributed_by} />
+                            <BeerListItem 
+                                key={beer._id}
+                                id={beer._id}
+                                imageUrl={beer.image_url}
+                                name={beer.name}
+                                tagline={beer.tagline}
+                                contributedBy={beer.contributed_by} 
+                            />
                         )
                     })} 
                 </ul>

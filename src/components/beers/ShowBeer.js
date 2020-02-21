@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
+import BeerCard from "./BeerCard";
 
 class ShowBeer extends Component {
     state = {}
-    
+
     getBeer = () => {
         const id = this.props.match.params.beerId;
 
@@ -25,17 +26,15 @@ class ShowBeer extends Component {
         const { image, name, tagline, first_brewed, attenuation_level, description, contributed_by } = this.state;
         
         return (
-            <div>
-                <h1>{name}</h1>
-                <h2>{tagline}</h2>
-                <img src={image} alt={name} />
-                <ul>
-                    <li>First brewed: {first_brewed}</li>
-                    <li>Attenuation level: {attenuation_level}</li>
-                    <li>Description: {description}</li>
-                    <li>Contributed by: {contributed_by}</li>
-                </ul>
-            </div>
+            <BeerCard 
+                image={image}
+                name={name} 
+                tagline={tagline} 
+                contributed={contributed_by} 
+                firstBrewed={first_brewed} 
+                attenuationLevel={attenuation_level} 
+                description={description} 
+            />
         )
     }
 }
