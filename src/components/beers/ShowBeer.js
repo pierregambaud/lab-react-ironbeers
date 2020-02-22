@@ -8,7 +8,7 @@ class ShowBeer extends Component {
     getBeer = () => {
         const id = this.props.match.params.beerId;
 
-        axios.get(`https://ih-beer-api.herokuapp.com/beers/${id}`)
+        axios.get(`https://ih-beers-api2.herokuapp.com/beers/${id}`)
             .then(r => {
                 const { image, name, tagline, first_brewed, attenuation_level, description, contributed_by } = r.data;
                 this.setState({

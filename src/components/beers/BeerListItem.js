@@ -6,7 +6,12 @@ class BeerListItem extends Component {
         const { id, imageUrl, name, tagline, contributedBy } = this.props;
 
         return (
-            <li key={id}><Link to={`/beers/${id}`}><img src={imageUrl} alt={name} />{name} - {tagline} - Created by {contributedBy}</Link></li>
+            <li key={id}>
+                <Link to={`/beers/${id}`}>
+                    <img src={imageUrl} alt={name} />
+                    {name} - {tagline} - Created by {contributedBy}
+                </Link>
+            </li>
         )
     }
 }

@@ -6,7 +6,7 @@ class RandomBeer extends Component {
     state = {}
 
     getRandomBeer = () => {
-        axios.get('https://ih-beer-api.herokuapp.com/beers/random')
+        axios.get('https://ih-beers-api2.herokuapp.com/beers')
             .then(r => {
                 const { image_url, name, tagline, first_brewed, attenuation_level, description, contributed_by } = r.data;
 

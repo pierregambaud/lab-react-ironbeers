@@ -9,7 +9,7 @@ class BeersList extends Component {
     }
 
     getAllBeers = () => {
-        axios.get('https://ih-beer-api.herokuapp.com/beers')
+        axios.get('https://ih-beers-api2.herokuapp.com/beers')
             .then(r => {
                 this.setState({
                     beers: r.data.filter(o => !o.id).slice(0,10)
